@@ -22,7 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1c9e144-bdc2-4332-bf78-799b5236a509" name="Default Changelist" comment="Clever Cloud Fix Commit2" />
+    <list default="true" id="f1c9e144-bdc2-4332-bf78-799b5236a509" name="Default Changelist" comment="Clever Cloud Fix Commit2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,6 +44,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="BackEnd_JavaSpring" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JupyterTrust" id="039d9192-a6fe-40d2-b08e-3278dffa807d" />
@@ -75,13 +82,15 @@
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
   <component name="RunManager" selected="Spring Boot.FaircorpApplication">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -131,6 +140,7 @@
       <workItem from="1606240156533" duration="18809000" />
       <workItem from="1606906016242" duration="2016000" />
       <workItem from="1609278912166" duration="31000" />
+      <workItem from="1609280537488" duration="704000" />
     </task>
     <task id="LOCAL-00001" summary="Temporary commit">
       <created>1606249146103</created>
