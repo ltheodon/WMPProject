@@ -1,3 +1,13 @@
+/**
+ *
+ *                      UJM * EMSE
+ *
+ *                 * Aleksei PASHININ *
+ *
+ *                     WMP Project
+ *
+ */
+
 package com.emse.spring.faircorp.dao;
 
 import com.emse.spring.faircorp.model.Window;
@@ -10,12 +20,15 @@ import java.util.List;
 
 public interface WindowDao extends JpaRepository<Window, Long> , WindowDaoCustom{
 
-    List<Window> findById(String id); // (1).
+    List<Window> findById(String id);
 
-    @Query("select c from Window c where c.name=:name")  // (2)
+    @Query("select c from Window c where c.name=:name")
     Window findByName(@Param("name") String name);
 
-    @Modifying // (3)
+    @Query("select c from Window c where c.WindowStatus=:windowStatus")
+    Window findByWindowStatus(@Param("windowStatus") String windowStatus);
+
+    @Modifying
     @Query("delete from Window c where c.name = ?1")
     void deleteByName(String name);
 }

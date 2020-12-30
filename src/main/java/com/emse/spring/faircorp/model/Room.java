@@ -30,6 +30,10 @@ public class Room {
     @OneToMany(mappedBy="room")
     private Set<Window> windows;
 
+    @OneToMany(mappedBy="room")
+    private Set<RoomWindows> room_ids;
+
+
     public Room() {
     }
 
@@ -70,6 +74,11 @@ public class Room {
         return heaters;
     }
 
+    public Set<RoomWindows> getRoomIds() {
+        return room_ids;
+    }
+
+
     public Set<Window> getWindows() {
         return windows;
     }
@@ -94,5 +103,9 @@ public class Room {
 
     public void setWindows(Set<Window> windows) {
         this.windows = windows;
+    }
+
+    public void setRoomIds(Set<RoomWindows> room_ids) {
+        this.room_ids = room_ids;
     }
 }

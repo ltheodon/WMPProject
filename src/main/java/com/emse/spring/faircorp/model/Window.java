@@ -3,6 +3,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -24,6 +25,9 @@ public class Window {
 
     @ManyToOne(optional = false) //Notification to create window
     private Room room;
+
+    @OneToMany(mappedBy="window")
+    private Set<RoomWindows> windows_ids;
 
 
     public Window() {
