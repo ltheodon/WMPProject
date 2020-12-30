@@ -1,8 +1,13 @@
 package com.emse.spring.faircorp.model;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
 
+@Getter
+@Setter
 @Entity
 public class Room {
     @Id
@@ -53,11 +58,11 @@ public class Room {
         return floor;
     }
 
-    public Double getcurrentTemperature() {
+    public Double getCurrentTemperature() {
         return currentTemperature;
     }
 
-    public Double gettargetTemperature() {
+    public Double getTargetTemperature() {
         return targetTemperature;
     }
 
@@ -75,11 +80,11 @@ public class Room {
     }
 
 
-    public void setcurrentTemperature(Double currentTemperature) {
+    public void setCurrentTemperature(Double currentTemperature) {
         this.currentTemperature = currentTemperature;
     }
 
-    public void settargetTemperature(Double targetTemperature) {
+    public void setTargetTemperature(Double targetTemperature) {
         this.targetTemperature = targetTemperature;
     }
 

@@ -5,6 +5,8 @@ com/emse/spring/faircorp/hello/ConsoleGreetingService.java
 com/emse/spring/faircorp/FaircorpApplicationConfig.java
  com.emse.spring.faircorp.FaircorpApplicationConfig
  com.emse.spring.faircorp.FaircorpApplicationConfig$1
+com/emse/spring/faircorp/dao/BuildingDaoCustomImpl.java
+ com.emse.spring.faircorp.dao.BuildingDaoCustomImpl
 com/emse/spring/faircorp/hello/AnotherConsoleGreetingService.java
  com.emse.spring.faircorp.hello.AnotherConsoleGreetingService
 com/emse/spring/faircorp/dao/HeaterDao.java
@@ -16,23 +18,35 @@ com/emse/spring/faircorp/hello/GreetingService.java
 com/emse/spring/faircorp/api/HelloController.java
  com.emse.spring.faircorp.api.HelloController
  com.emse.spring.faircorp.api.HelloController$MessageDto
+com/emse/spring/faircorp/dao/WindowDaoCustom.java
+ com.emse.spring.faircorp.dao.WindowDaoCustom
 com/emse/spring/faircorp/hello/UserService.java
  com.emse.spring.faircorp.hello.UserService
 com/emse/spring/faircorp/model/Room.java
  com.emse.spring.faircorp.model.Room
 com/emse/spring/faircorp/dao/RoomDao.java
  com.emse.spring.faircorp.dao.RoomDao
-com/emse/spring/faircorp/model/Heater.java
- com.emse.spring.faircorp.model.Heater
+com/emse/spring/faircorp/dao/BuildingDao.java
+ com.emse.spring.faircorp.dao.BuildingDao
 com/emse/spring/faircorp/FaircorpApplication.java
  com.emse.spring.faircorp.FaircorpApplication
+com/emse/spring/faircorp/dao/WindowDaoCustomImpl.java
+ com.emse.spring.faircorp.dao.WindowDaoCustomImpl
+com/emse/spring/faircorp/model/WindowStatus.java
+ com.emse.spring.faircorp.model.WindowStatus
+com/emse/spring/faircorp/model/Heater.java
+ com.emse.spring.faircorp.model.Heater
 com/emse/spring/faircorp/model/HeaterStatus.java
  com.emse.spring.faircorp.model.HeaterStatus
+com/emse/spring/faircorp/api/RoomDto.java
+ com.emse.spring.faircorp.api.RoomDto
 com/emse/spring/faircorp/hello/DummyUserService.java
  com.emse.spring.faircorp.hello.DummyUserService
 com/emse/spring/faircorp/dao/WindowDao.java
  com.emse.spring.faircorp.dao.WindowDao
-com/emse/spring/faircorp/model/WindowStatus.java
- com.emse.spring.faircorp.model.WindowStatus
 com/emse/spring/faircorp/model/Window.java
  com.emse.spring.faircorp.model.Window
+com/emse/spring/faircorp/dao/BuildingDaoCustom.java
+ com.emse.spring.faircorp.dao.BuildingDaoCustom
+com/emse/spring/faircorp/model/Building.java
+ com.emse.spring.faircorp.model.Building
