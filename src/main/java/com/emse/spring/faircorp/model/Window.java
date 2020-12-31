@@ -66,9 +66,4 @@ public class Window {
     public Room getRoom() {
         return room;
     }
-
-    public void setRoom_id(Room room_id) {
-        this.room = room_id;
-
-    }
 }
