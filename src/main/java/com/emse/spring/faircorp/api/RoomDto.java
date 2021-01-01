@@ -14,12 +14,13 @@ public class RoomDto {
     public RoomDto() {
     }
 
-    public RoomDto(Room Room) {
-        this.id = Room.getId();
-        this.name = Room.getName();
-        this.currentTemperature = Room.getCurrentTemperature();
-        this.targetTemperature = Room.getTargetTemperature();
-        this.floor = Room.getFloor();
+    public RoomDto(Room room) {
+        this.id = room.getId();
+        this.name = room.getName();
+        this.currentTemperature = room.getCurrentTemperature();
+        this.targetTemperature = room.getTargetTemperature();
+        this.floor = room.getFloor();
+        this.building = room.getBuilding();
     }
 
     public Long getId() {
@@ -46,9 +47,7 @@ public class RoomDto {
         this.currentTemperature = currentTemperature;
     }
 
-    public Double getTargetTemperature() {
-        return targetTemperature;
-    }
+    public Double getTargetTemperature() { return targetTemperature; }
 
     public void setTargetTemperature(Double targetTemperature) {
         this.targetTemperature = targetTemperature;
@@ -60,6 +59,14 @@ public class RoomDto {
 
     public void setFloor(Integer floor) {
         this.floor = floor;
+    }
+
+    public Building getBuilding() {
+        return building;
+    }
+
+    public void setBuilding(Building building) {
+        this.building = building;
     }
 
 }

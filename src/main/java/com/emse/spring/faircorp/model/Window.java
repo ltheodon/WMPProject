@@ -19,11 +19,11 @@ public class Window {
     private String name;
 
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "status")
     @Enumerated(EnumType.STRING)
     private WindowStatus WindowStatus;
 
-    @ManyToOne(optional = false) //Notification to create window
+    @ManyToOne(fetch = FetchType.EAGER)
     private Room room;
 
     @OneToMany(mappedBy="window")
@@ -33,8 +33,8 @@ public class Window {
     public Window() {
     }
 
-    public Window(String name, WindowStatus status, Room room) {
-        this.WindowStatus = status;
+    public Window(String name, WindowStatus WindowStatus, Room room) {
+        this.WindowStatus = WindowStatus;
         this.name = name;
         this.room = room;
     }

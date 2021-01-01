@@ -17,6 +17,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import java.util.List;
 
-public interface HeaterDao extends JpaRepository<Heater, Long> {
+public interface HeaterDao extends JpaRepository<Heater, Long>, HeaterDaoCustom  {
+    ///////////POTENTIAL
+    @Query("select c from Heater c where c.name=:name")
+    Heater findByName(@Param("name") String name);
 
 }

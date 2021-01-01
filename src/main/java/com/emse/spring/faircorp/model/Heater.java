@@ -31,8 +31,7 @@ public class Heater {
     public Heater() {
     }
 
-    public Heater(Long id, String name, Long power, Room room, HeaterStatus heaterStatus) {
-        this.id = id;
+    public Heater(String name, Long power, Room room, HeaterStatus heaterStatus) {
         this.name = name;
         this.power = power;
         this.room = room;

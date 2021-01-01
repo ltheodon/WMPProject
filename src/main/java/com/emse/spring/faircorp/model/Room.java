@@ -1,4 +1,6 @@
 package com.emse.spring.faircorp.model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,14 +19,14 @@ public class Room {
     @Column(nullable=false)
     private String name;
 
-    @Column(nullable=false)
+    @Column(nullable=false, name = "level")
     private Integer floor;
 
     private Double targetTemperature;
 
     private Double currentTemperature;
 
-    @OneToMany(mappedBy="room")
+    @OneToMany(targetEntity=Heater.class, mappedBy="room")
     private Set<Heater> heaters;
 
     @OneToMany(mappedBy="room")
@@ -33,15 +35,20 @@ public class Room {
     @OneToMany(mappedBy="room")
     private Set<RoomWindows> room_ids;
 
+    @ManyToOne
+    @NotNull
+    private Building building;
+
 
     public Room() {
     }
 
-    public Room(int floor, String name, Double currentTemperature, Double targetTemperature) {
+    public Room(String name, Double currentTemperature, Double targetTemperature, Integer floor, Building building) {
         this.floor = floor;
         this.name = name;
         this.currentTemperature = currentTemperature;
         this.targetTemperature = targetTemperature;
+        this.building = building;
     }
 
 
@@ -61,17 +68,19 @@ public class Room {
         this.name = name;
     }
 
-    public int getFloor() {
+    public Integer getFloor() {
         return floor;
+    }
+
+    public void setFloor(Integer floor) {
+        this.floor = floor;
     }
 
     public Double getCurrentTemperature() {
         return currentTemperature;
     }
 
-    public Double getTargetTemperature() {
-        return targetTemperature;
-    }
+    public Double getTargetTemperature() { return targetTemperature; }
 
     public Set<Heater> getHeaters() {
         return heaters;

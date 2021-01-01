@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -18,6 +19,9 @@ public class Building {
 
     @Column(nullable = false)
     private String name;
+
+    @OneToMany(targetEntity=Room.class, mappedBy="building")
+    private Set<Room> rooms;
 
     public Building() {
     }
