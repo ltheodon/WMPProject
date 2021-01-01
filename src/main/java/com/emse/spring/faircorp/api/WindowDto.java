@@ -9,8 +9,16 @@ public class WindowDto {
     private String name;
     private WindowStatus windowStatus;
     private Long roomId;
-
+    private RoomDto roomD;
     public WindowDto() {
+    }
+
+    public void setRoomDto(RoomDto roomDto) {
+        this.roomD = roomDto;
+    }
+
+    public RoomDto getRoomDto() {
+        return roomD;
     }
 
     public WindowDto(Window window) {
@@ -18,8 +26,17 @@ public class WindowDto {
         this.name = window.getName();
         this.windowStatus = window.getWindowStatus();
         this.roomId = window.getRoom().getId();
+        this.roomD=castRoomDto(window.getRoom());
     }
 
+    public RoomDto castRoomDto(Room room){
+        RoomDto roomDto=new RoomDto();
+        roomDto.setId(room.getId());
+        roomDto.setName(room.getName());
+        roomDto.setTargetTemperature(room.getTargetTemperature());
+        roomDto.setCurrentTemperature(room.getCurrentTemperature());
+        return roomDto;
+    }
     public Long getId() {
         return id;
     }
