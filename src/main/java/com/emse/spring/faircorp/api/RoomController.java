@@ -44,7 +44,7 @@ public class RoomController {
     public RoomDto create(@RequestBody RoomDto dto) {
         Room room = null;
         if (dto.getId() == null) {
-            room = roomDao.save(new Room( dto.getName(),  dto.getCurrentTemperature(),  dto.getTargetTemperature(), dto.getFloor(), dto.getBuilding() ));
+            room = roomDao.save(new Room( dto.getName(), dto.getCurrentTemperature(),  dto.getTargetTemperature(), dto.getFloor(),dto.getBuilding() ));
         }
         else {
             room = roomDao.getOne(dto.getId());

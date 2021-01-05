@@ -10,6 +10,7 @@ public class WindowDto {
     private WindowStatus windowStatus;
     private Long roomId;
     private RoomDto roomD;
+
     public WindowDto() {
     }
 

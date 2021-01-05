@@ -11,6 +11,7 @@ public class RoomDto {
     private Integer floor;
     private Building building;
 
+
     public RoomDto() {
     }
 
