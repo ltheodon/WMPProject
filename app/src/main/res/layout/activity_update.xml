@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WindowsActivity">
+
+    <TextView
+        android:id="@+id/status_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/muli"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:text="@string/status_change"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sendUpdate" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/footer" />
+
+    <Button
+        android:id="@+id/buttonUpdate2"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:background="@drawable/settings_light"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        app:layout_constraintVertical_bias="0.636" />
+
+    <Button
+        android:id="@+id/buttonHome2"
+        android:layout_width="23dp"
+        android:layout_height="26dp"
+        android:background="@drawable/home"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonUpdate2"
+        app:layout_constraintEnd_toStartOf="@+id/buttonUpdate2"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buttonUpdate2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonProfile2"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:background="@drawable/user"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonUpdate2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toEndOf="@+id/buttonUpdate2"
+        app:layout_constraintTop_toTopOf="@+id/buttonUpdate2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonReturn"
+        android:layout_width="28dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/left_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/buttonGenMenu"
+        android:layout_width="23dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/menu_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_room_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/muli"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:text="@string/act_window_update"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonReturn" />
+
+    <Button
+        android:id="@+id/buttonRoom1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/room_dark"
+        app:layout_constraintEnd_toStartOf="@+id/buttonRoom2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_room_number"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/buttonRoom2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/room_dark"
+        app:layout_constraintEnd_toStartOf="@+id/buttonRoom3"
+        app:layout_constraintStart_toEndOf="@+id/buttonRoom1"
+        app:layout_constraintTop_toBottomOf="@+id/txt_room_number"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/buttonRoom3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/room_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonRoom2"
+        app:layout_constraintTop_toBottomOf="@+id/txt_room_number"
+        android:onClick="onClick"/>
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/status1"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toTopOf="@+id/textView3"
+        android:onClick="onCheckboxClicked"/>
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/status2"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toTopOf="@+id/textView8" />
+
+    <Switch
+        android:id="@+id/switch3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColorLink="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/status3"
+        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintTop_toTopOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/text_window1"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRoom3" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/text_window2"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/text_window3"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/status1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:text="@string/txt_status_temp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textViewRoom3"
+        app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/status2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="35dp"
+        android:text="@string/txt_status_temp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/status1"
+        app:layout_constraintTop_toBottomOf="@+id/status1" />
+
+    <TextView
+        android:id="@+id/status3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="35dp"
+        android:text="@string/txt_status_temp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/status2"
+        app:layout_constraintTop_toBottomOf="@+id/status2" />
+
+    <TextView
+        android:id="@+id/textViewRoom3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_room3"
+        android:textColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="@+id/buttonRoom3"
+        app:layout_constraintStart_toStartOf="@+id/buttonRoom3"
+        app:layout_constraintTop_toTopOf="@+id/textViewRoom1" />
+
+    <TextView
+        android:id="@+id/textViewRoom2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/text_room2"
+        android:textColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="@+id/buttonRoom2"
+        app:layout_constraintStart_toStartOf="@+id/buttonRoom2"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRoom2" />
+
+    <TextView
+        android:id="@+id/textViewRoom1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/text_room1"
+        android:textColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="@+id/buttonRoom1"
+        app:layout_constraintStart_toStartOf="@+id/buttonRoom1"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRoom1" />
+
+    <Button
+        android:id="@+id/sendUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/muli"
+        android:textSize="16dp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/spec_btn"
+        android:text="@string/act_window_update"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

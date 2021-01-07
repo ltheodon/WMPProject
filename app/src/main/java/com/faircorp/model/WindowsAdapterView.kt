@@ -26,20 +26,28 @@ class WindowsAdapterView {
             notifyDataSetChanged()
         }
 
+
+        fun findById(windows: List<WindowDto>, id: Long) = windows.firstOrNull { it.id == id}
+
+
         override fun getItemCount(): Int = items.size // (5)
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WindowViewHolder { // (6)
             val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.activity_windows_item, parent, false)
+                    .inflate(R.layout.activity_windows_item, parent, false)
             return WindowViewHolder(view)
         }
 
         override fun onBindViewHolder(holder: WindowViewHolder, position: Int) {
             val window = items[position]
+            println("WINDOW: "+window)
             holder.apply {
                 name.text = window.name
-                status.text = window.status.toString()
-                room.text = window.room.name
+                println("NAME: "+window.name)
+                println("STATUS: "+window.windowStatus)
+                println("ROOM: "+window.roomDto.name)
+                status.text = window.windowStatus.toString()
+                room.text = window.roomDto.name
                 itemView.setOnClickListener { listener.onWindowSelected(window.id) } // (1)
             }
         }

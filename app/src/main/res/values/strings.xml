@@ -5,13 +5,38 @@
     <string name="menu_website">Our website</string>
     <string name="menu_email">Send us an email</string>
     <string name="act_main_windowname_hint">Light name</string>s
-    <string name="act_main_welcome">Welcome on faircorp, <br></br> the app to manage building windows</string>
+    <string name="act_main_welcome">Welcome on faircorp,<br></br> the app to manage building windows</string>
     <string name="act_main_open_window">Open window</string>
     <string name="act_light_name">Ligth name</string>
     <string name="act_window_name">Window name</string>
     <string name="act_window_room">Room</string>
     <string name="act_window_room_target_temp">Target room temperature</string>
     <string name="act_window_room_current_temp">Current room temperature</string>
+    <string name="act_window_room_target_temp_new">Target Room</string>
+    <string name="act_window_room_current_temp_new">Current Room</string>
+    <string name="act_window_update">Update Window Status</string>
     <string name="act_window_status">Status</string>
+    <string name="desc_intro">Faircorp Smart Home</string>
+    <string name="text_intro1">WMP Project M2</string>
+    <string name="text_intro2">EMSE / UJM 2021</string>
+    <string name="text_intro3">My First Android Application</string>
+    <string name="text_room1">Room 1</string>
+    <string name="text_room2">Room 2</string>
+    <string name="text_room3">Room 3</string>
+    <string name="text_window1">Window 1</string>
+    <string name="text_window2">Window 2</string>
+    <string name="text_window3">Window 3</string>
+    <string name="text_menu1">Home</string>
+    <string name="text_menu2">Update</string>
+    <string name="text_menu3">Profile</string>
+    <string name="text_menu4">Visit Us</string>
+    <string name="text_menu5">Contact Us</string>
+    <string name="text_profile_name">Aleksei Pashinin</string>
+    <string name="text_profile_tel">+33 782 35 87 67</string>
+    <string name="text_profile_email">alekspashinin@gmail.com</string>
+    <string name="text_profile_title">Profile Information</string>
+    <string name="status_change">Status is changed</string>
+    <string name="txt_status_temp">CLOSED</string>
+
 
 </resources>

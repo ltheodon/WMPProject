@@ -12,10 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Faircorp">
         <activity android:name=".WindowsActivity"></activity>
+        <activity android:name=".IntroSliderActivity"/>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".MenuActivity"/>
+        <activity android:name=".ProfileActivity"/>
+        <activity android:name=".UpdateActivity"/>
         <activity
             android:name=".WindowActivity"
             android:parentActivityName=".WindowsActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
