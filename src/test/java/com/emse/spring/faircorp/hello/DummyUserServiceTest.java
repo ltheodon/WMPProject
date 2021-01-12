@@ -11,19 +11,21 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(OutputCaptureExtension.class)
-@ExtendWith(SpringExtension.class) // (1)
+@ExtendWith(SpringExtension.class)
+
 class DummyUserServiceTest {
 
-    @Configuration // (2)
-    @ComponentScan("com.emse.spring.faircorp.hello")
-    public static class DummyUserServiceTestConfig{}
-
-    @Autowired // (3)
+    @Autowired
     public DummyUserService dummyUserService;
 
     @Test
     public void testGreetingAll(CapturedOutput output) {
         dummyUserService.greetAll();
         Assertions.assertThat(output).contains("Hello, Elodie!", "Hello, Charles!");
+    }
+
+    @Configuration
+    @ComponentScan("com.emse.spring.faircorp.hello")
+    public static class DummyUserServiceTestConfig {
     }
 }

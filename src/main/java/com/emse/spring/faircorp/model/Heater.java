@@ -1,12 +1,20 @@
-package com.emse.spring.faircorp.model;
+/**
+ *
+ *                      UJM * EMSE
+ *
+ *                  * Aleksei PASHININ *
+ *
+ *                     WMP Project
+ *
+ */
 
-import lombok.Getter;
-import lombok.Setter;
+package com.emse.spring.faircorp.model;
 
 import javax.persistence.*;
 
-@Getter
-@Setter
+import lombok.*;
+
+@Data
 @Entity
 public class Heater {
 
@@ -14,7 +22,7 @@ public class Heater {
     @GeneratedValue
     private Long id;
 
-    @Column(nullable=false)
+    @Column(nullable = false)
     private String name;
 
     private Long power;
@@ -23,7 +31,7 @@ public class Heater {
     private Room room;
 
 
-    @Column(nullable=false)
+    @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
     private HeaterStatus heaterStatus;
 
@@ -35,48 +43,9 @@ public class Heater {
         this.name = name;
         this.power = power;
         this.room = room;
-        this.heaterStatus= heaterStatus;
-
-
-    }
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public HeaterStatus getHeaterStatus() {
-        return heaterStatus;
-    }
-
-    public void setHeaterStatus(HeaterStatus heaterStatus) {
         this.heaterStatus = heaterStatus;
+
+
     }
 
-    public void setPower(Long power) {
-        this.power = power;
-    }
-
-    public Long getPower() {
-        return power;
-    }
-
-    public void setRoom(Room room) {
-        this.room = room;
-    }
-
-    public Room getRoom() {
-        return room;
-    }
 }

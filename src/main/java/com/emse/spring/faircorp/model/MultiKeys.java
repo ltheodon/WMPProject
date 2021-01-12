@@ -1,3 +1,13 @@
+/**
+ *
+ *                      UJM * EMSE
+ *
+ *                  * Aleksei PASHININ *
+ *
+ *                     WMP Project
+ *
+ */
+
 package com.emse.spring.faircorp.model;
 
 import java.io.Serializable;

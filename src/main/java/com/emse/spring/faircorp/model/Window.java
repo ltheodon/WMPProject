@@ -1,12 +1,21 @@
+/**
+ *
+ *                      UJM * EMSE
+ *
+ *                  * Aleksei PASHININ *
+ *
+ *                     WMP Project
+ *
+ */
+
 package com.emse.spring.faircorp.model;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Set;
 
-@Getter
-@Setter
+import lombok.*;
+
+@Data
 @Entity
 @Table(name = "RWINDOW")
 public class Window {
@@ -26,7 +35,7 @@ public class Window {
     @ManyToOne(fetch = FetchType.EAGER)
     private Room room;
 
-    @OneToMany(mappedBy="window")
+    @OneToMany(mappedBy = "window")
     private Set<RoomWindows> windows_ids;
 
 
@@ -39,22 +48,6 @@ public class Window {
         this.room = room;
     }
 
-    public Long getId() {
-        return this.id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public WindowStatus getWindowStatus() {
         return WindowStatus;
     }
@@ -63,7 +56,4 @@ public class Window {
         this.WindowStatus = WindowStatus;
     }
 
-    public Room getRoom() {
-        return room;
-    }
 }

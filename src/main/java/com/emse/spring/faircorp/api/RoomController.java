@@ -1,3 +1,13 @@
+/**
+ *
+ *                      UJM * EMSE
+ *
+ *                  * Aleksei PASHININ *
+ *
+ *                     WMP Project
+ *
+ */
+
 package com.emse.spring.faircorp.api;
 
 import com.emse.spring.faircorp.dao.BuildingDao;
@@ -24,11 +34,11 @@ public class RoomController {
     private final BuildingDao buildingDao;
 
 
-    public RoomController(RoomDao roomDao, BuildingDao buildingDao, HeaterDao heaterDao, WindowDao windowDao ) {
+    public RoomController(RoomDao roomDao, BuildingDao buildingDao, HeaterDao heaterDao, WindowDao windowDao) {
         this.roomDao = roomDao;
-        this.heaterDao = heaterDao ;
+        this.heaterDao = heaterDao;
         this.windowDao = windowDao;
-        this.buildingDao = buildingDao ;
+        this.buildingDao = buildingDao;
     }
 
     @GetMapping
@@ -45,9 +55,8 @@ public class RoomController {
     public RoomDto create(@RequestBody RoomDto dto) {
         Room room = null;
         if (dto.getId() == null) {
-            room = roomDao.save(new Room( dto.getName(), dto.getCurrentTemperature(),  dto.getTargetTemperature(), dto.getFloor(),dto.getBuilding() ));
-        }
-        else {
+            room = roomDao.save(new Room(dto.getName(), dto.getCurrentTemperature(), dto.getTargetTemperature(), dto.getFloor(), dto.getBuilding()));
+        } else {
             room = roomDao.getOne(dto.getId());
             room.setCurrentTemperature(dto.getCurrentTemperature());
             room.setTargetTemperature(dto.getTargetTemperature());
@@ -63,9 +72,9 @@ public class RoomController {
     public RoomDto switchStatusWindow(@PathVariable Long room_id, Long windowId) {
         Room room = roomDao.findById(room_id).orElseThrow(IllegalArgumentException::new);
         Set<Window> windows = room.getWindows();
-        for(Window window : windows){
-            if (window.getId()==windowId){
-                window.setWindowStatus(window.getWindowStatus() == WindowStatus.OPEN ? WindowStatus.CLOSED: WindowStatus.OPEN);
+        for (Window window : windows) {
+            if (window.getId() == windowId) {
+                window.setWindowStatus(window.getWindowStatus() == WindowStatus.OPEN ? WindowStatus.CLOSED : WindowStatus.OPEN);
             }
         }
         room.setWindows(windows);
@@ -73,12 +82,12 @@ public class RoomController {
     }
 
     @PutMapping(path = "/{room_id}/switchHeaters")
-    public RoomDto switchStatusHeater(@PathVariable Long room_id,  Long heaterId) {
+    public RoomDto switchStatusHeater(@PathVariable Long room_id, Long heaterId) {
         Room room = roomDao.findById(room_id).orElseThrow(IllegalArgumentException::new);
         Set<Heater> heaters = room.getHeaters();
-        for(Heater heater : heaters){
-            if (heater.getId()==heaterId){
-                heater.setHeaterStatus(heater.getHeaterStatus() == HeaterStatus.ON ? HeaterStatus.OFF: HeaterStatus.ON);
+        for (Heater heater : heaters) {
+            if (heater.getId() == heaterId) {
+                heater.setHeaterStatus(heater.getHeaterStatus() == HeaterStatus.ON ? HeaterStatus.OFF : HeaterStatus.ON);
             }
         }
         room.setHeaters(heaters);

@@ -6,12 +6,13 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.system.CapturedOutput;
 import org.springframework.boot.test.system.OutputCaptureExtension;
 
-@ExtendWith(OutputCaptureExtension.class) // (1)
+@ExtendWith(OutputCaptureExtension.class)
+
 class GreetingServiceTest {
 
     @Test
     public void testGreeting(CapturedOutput output) {
-        GreetingService greetingService = new ConsoleGreetingService(); // (2)
+        GreetingService greetingService = new ConsoleGreetingService();
         greetingService.greet("Spring");
         Assertions.assertThat(output.getAll()).contains("Hello, Spring!");
     }

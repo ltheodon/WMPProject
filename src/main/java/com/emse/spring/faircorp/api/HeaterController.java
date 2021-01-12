@@ -1,3 +1,13 @@
+/**
+ *
+ *                      UJM * EMSE
+ *
+ *                  * Aleksei PASHININ *
+ *
+ *                     WMP Project
+ *
+ */
+
 package com.emse.spring.faircorp.api;
 
 import com.emse.spring.faircorp.dao.HeaterDao;
@@ -38,10 +48,9 @@ public class HeaterController {
         Room room = roomDao.getOne(dto.getRoomId());
         Heater heater = null;
         if (dto.getId() == null) {
-            heater = heaterDao.save(new Heater( dto.getName(), dto.getPower(), room , dto.getHeaterStatus()) );
-        }
-        else {
-            heater = heaterDao.getOne(dto.getId());  // (9)
+            heater = heaterDao.save(new Heater(dto.getName(), dto.getPower(), room, dto.getHeaterStatus()));
+        } else {
+            heater = heaterDao.getOne(dto.getId());
             heater.setHeaterStatus(dto.getHeaterStatus());
         }
         return new HeaterDto(heater);

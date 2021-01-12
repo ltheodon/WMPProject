@@ -1,3 +1,13 @@
+/**
+ *
+ *                      UJM * EMSE
+ *
+ *                  * Aleksei PASHININ *
+ *
+ *                     WMP Project
+ *
+ */
+
 package com.emse.spring.faircorp.dao;
 
 import com.emse.spring.faircorp.model.Window;

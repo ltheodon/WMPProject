@@ -1,12 +1,21 @@
 package com.emse.spring.faircorp.model;
 
 import lombok.Getter;
-import lombok.Setter;
+/**
+ *
+ *                      UJM * EMSE
+ *
+ *                  * Aleksei PASHININ *
+ *
+ *                     WMP Project
+ *
+ */
 
 import javax.persistence.*;
 
-@Getter
-@Setter
+import lombok.*;
+
+@Data
 @Entity
 @IdClass(MultiKeys.class)
 @Table(name = "ROOM_WINDOWS")
@@ -15,7 +24,7 @@ public class RoomWindows {
 
     @Id
     @GeneratedValue
-    @Column(nullable=false, insertable = false, updatable = false)
+    @Column(nullable = false, insertable = false, updatable = false)
     private Long room_id;
 
     @ManyToOne(optional = false)
@@ -23,7 +32,7 @@ public class RoomWindows {
 
     @Id
     @GeneratedValue
-    @Column(unique=true, nullable=false)
+    @Column(unique = true, nullable = false)
     private Long windows_id;
 
     @ManyToOne(optional = false)

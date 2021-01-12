@@ -1,6 +1,17 @@
+/**
+ *
+ *                      UJM * EMSE
+ *
+ *                  * Aleksei PASHININ *
+ *
+ *                     WMP Project
+ *
+ */
+
 package com.emse.spring.faircorp.dao;
 
 import com.emse.spring.faircorp.model.Room;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -17,7 +28,6 @@ public class RoomDaoCustomImpl implements RoomDaoCustom {
                 .setParameter("name", name)
                 .getResultList();
     }
-
 
 
 }
