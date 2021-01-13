@@ -1,3 +1,13 @@
+/**
+ *
+ *                      UJM * EMSE
+ *
+ *                  * Aleksei PASHININ *
+ *
+ *                     WMP Project
+ *
+ */
+
 package com.faircorp.model
 
 import android.view.LayoutInflater
@@ -9,7 +19,8 @@ import com.faircorp.R
 
 class WindowsAdapterView {
 
-    class WindowAdapter(val listener: OnWindowSelectedListener): RecyclerView.Adapter<WindowAdapter.WindowViewHolder>() {
+    class WindowAdapter(val listener: OnWindowSelectedListener) :
+        RecyclerView.Adapter<WindowAdapter.WindowViewHolder>() {
 
 
         inner class WindowViewHolder(view: View) : RecyclerView.ViewHolder(view) { // (2)
@@ -27,25 +38,25 @@ class WindowsAdapterView {
         }
 
 
-        fun findById(windows: List<WindowDto>, id: Long) = windows.firstOrNull { it.id == id}
+        fun findById(windows: List<WindowDto>, id: Long) = windows.firstOrNull { it.id == id }
 
 
         override fun getItemCount(): Int = items.size // (5)
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WindowViewHolder { // (6)
             val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.activity_windows_item, parent, false)
+                .inflate(R.layout.activity_windows_item, parent, false)
             return WindowViewHolder(view)
         }
 
         override fun onBindViewHolder(holder: WindowViewHolder, position: Int) {
             val window = items[position]
-            println("WINDOW: "+window)
+            println("WINDOW: " + window)
             holder.apply {
                 name.text = window.name
-                println("NAME: "+window.name)
-                println("STATUS: "+window.windowStatus)
-                println("ROOM: "+window.roomDto.name)
+                println("NAME: " + window.name)
+                println("STATUS: " + window.windowStatus)
+                println("ROOM: " + window.roomDto.name)
                 status.text = window.windowStatus.toString()
                 room.text = window.roomDto.name
                 itemView.setOnClickListener { listener.onWindowSelected(window.id) } // (1)

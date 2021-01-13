@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Faircorp</string>
 
-    <string name="app_logo_description">Faircorp logo</string><string name="menu_windows">Building windows</string>
+    <string name="app_logo_description">Faircorp logo</string>
+    <string name="menu_windows">Building windows</string>
     <string name="menu_website">Our website</string>
     <string name="menu_email">Send us an email</string>
     <string name="act_main_windowname_hint">Light name</string>s
@@ -35,7 +36,7 @@
     <string name="text_profile_tel">+33 782 35 87 67</string>
     <string name="text_profile_email">alekspashinin@gmail.com</string>
     <string name="text_profile_title">Profile Information</string>
-    <string name="status_change">Status is changed</string>
+    <string name="status_change">Status is changed, go to Room Page</string>
     <string name="txt_status_temp">CLOSED</string>
 
 

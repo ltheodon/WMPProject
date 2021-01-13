@@ -1,10 +1,20 @@
+/**
+ *
+ *                      UJM * EMSE
+ *
+ *                  * Aleksei PASHININ *
+ *
+ *                     WMP Project
+ *
+ */
+
 package com.faircorp
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 
-class ProfileActivity : BasicActivity(){
+class ProfileActivity : BasicActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

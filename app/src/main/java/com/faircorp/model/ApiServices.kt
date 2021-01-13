@@ -1,10 +1,20 @@
+/**
+ *
+ *                      UJM * EMSE
+ *
+ *                  * Aleksei PASHININ *
+ *
+ *                     WMP Project
+ *
+ */
+
 package com.faircorp.model
 
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 class ApiServices {
-    val windowsApiService : WindowApiService by lazy {
+    val windowsApiService: WindowApiService by lazy {
         Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create())
             .baseUrl("https://alekspashinin.cleverapps.io/api/")
@@ -12,7 +22,7 @@ class ApiServices {
             .create(WindowApiService::class.java)
     }
 
-    val roomsApiService : RoomApiService by lazy {
+    val roomsApiService: RoomApiService by lazy {
         Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create())
             .baseUrl("https://alekspashinin.cleverapps.io/api/")

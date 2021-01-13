@@ -1,10 +1,19 @@
 package com.faircorp
 
+/**
+ *
+ *                      UJM * EMSE
+ *
+ *                  * Aleksei PASHININ *
+ *
+ *                     WMP Project
+ *
+ */
+
 import android.content.Intent
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import kotlinx.android.synthetic.main.activity_intro_slider.*
@@ -21,9 +30,11 @@ class IntroSliderActivity : AppCompatActivity() {
         val adapter = IntroSliderAdapter(this)
         vpIntroSlider.adapter = adapter
 
-        fragmentList.addAll(listOf(
-            Intro1Fragment(), Intro2Fragment(), Intro3Fragment()
-        ))
+        fragmentList.addAll(
+            listOf(
+                Intro1Fragment(), Intro2Fragment(), Intro3Fragment()
+            )
+        )
         adapter.setFragmentList(fragmentList)
 
         indicatorLayout.setIndicatorCount(adapter.itemCount)

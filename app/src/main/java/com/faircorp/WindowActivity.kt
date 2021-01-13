@@ -1,3 +1,13 @@
+/**
+ *
+ *                      UJM * EMSE
+ *
+ *                  * Aleksei PASHININ *
+ *
+ *                     WMP Project
+ *
+ */
+
 package com.faircorp
 
 import android.content.Intent
@@ -6,14 +16,15 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
-import com.faircorp.model.*
+import com.faircorp.model.ApiServices
+import com.faircorp.model.OnWindowSelectedListener
+import com.faircorp.model.WindowDto
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 
 const val WINDOW_NAME_PARAM = "com.faircorp.windowname.attribute"
-
 
 
 class WindowActivity : BasicActivity(), OnWindowSelectedListener {
@@ -28,24 +39,21 @@ class WindowActivity : BasicActivity(), OnWindowSelectedListener {
 
         lifecycleScope.launch(context = Dispatchers.IO) { // (1)
             runCatching { ApiServices().windowsApiService.findById(id).execute() } // (2)
-                    .onSuccess {
-                        withContext(context = Dispatchers.Main) { // (3)
-                            println("01-> " + superList.size)
-                            superList.add(it.body())
-                            println("02-> " + superList.size)
-                            println("RES: " + it.body())
-                            showValues(id);
-                        }
+                .onSuccess {
+                    withContext(context = Dispatchers.Main) { // (3)
+                        superList.add(it.body())
+                        showValues(id);
                     }
-                    .onFailure {
-                        withContext(context = Dispatchers.Main) { // (3)
-                            Toast.makeText(
-                                    applicationContext,
-                                    "Error on windows loading $it",
-                                    Toast.LENGTH_LONG
-                            ).show()
-                        }
+                }
+                .onFailure {
+                    withContext(context = Dispatchers.Main) { // (3)
+                        Toast.makeText(
+                            applicationContext,
+                            "Error on windows loading $it",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
+                }
         }
 
         val goToMenuHome = findViewById(R.id.buttonHome3) as Button
@@ -78,18 +86,19 @@ class WindowActivity : BasicActivity(), OnWindowSelectedListener {
         }
     }
 
-     fun showValues(id: Long){
-        println("1-> "+superList.size)
-        val window = superList.firstOrNull { it!!.id == id}
-        println("WINDOW ->"+window)
+    fun showValues(id: Long) {
+        println("1-> " + superList.size)
+        val window = superList.firstOrNull { it!!.id == id }
+        println("WINDOW ->" + window)
         if (window != null) {
             findViewById<TextView>(R.id.txt_window_name).text = window.name
             findViewById<TextView>(R.id.txt_room_name).text = window.roomDto.name
-            findViewById<TextView>(R.id.txt_window_current_temperature).text = window.roomDto.currentTemperature?.toString()
-            findViewById<TextView>(R.id.txt_window_target_temperature).text = window.roomDto.targetTemperature?.toString()
+            findViewById<TextView>(R.id.txt_window_current_temperature).text =
+                window.roomDto.currentTemperature?.toString()
+            findViewById<TextView>(R.id.txt_window_target_temperature).text =
+                window.roomDto.targetTemperature?.toString()
             findViewById<TextView>(R.id.txt_window_status).text = window.windowStatus.toString()
-        }
-        else {
+        } else {
             System.out.println("NULL")
         }
     }

@@ -61,7 +61,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/left_arrow"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonGenMenu"
@@ -80,9 +80,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/muli"
-        android:textSize="24sp"
-        android:textColor="@android:color/black"
         android:text="@string/act_window_room"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonReturn" />
 

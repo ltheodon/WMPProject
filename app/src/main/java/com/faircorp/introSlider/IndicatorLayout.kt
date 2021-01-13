@@ -1,3 +1,13 @@
+/**
+ *
+ *                      UJM * EMSE
+ *
+ *                  * Aleksei PASHININ *
+ *
+ *                     WMP Project
+ *
+ */
+
 package com.faircorp
 
 import android.content.Context
@@ -10,20 +20,21 @@ class IndicatorLayout : LinearLayout {
     private var indicatorCount: Int = 0
     private var selectedPosition: Int = 0
 
-    constructor(context: Context): super(context)
-    constructor(context: Context, attrs: AttributeSet): super(context, attrs) {
+    constructor(context: Context) : super(context)
+    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
         initIndicators(context, attrs, 0)
     }
 
     constructor(
         context: Context, attrs: AttributeSet, defStyleAttr: Int
-    ): super(context, attrs, defStyleAttr) {
+    ) : super(context, attrs, defStyleAttr) {
         initIndicators(context, attrs, defStyleAttr)
     }
 
     private fun initIndicators(context: Context, attrs: AttributeSet, defStyleAttr: Int) {
         val typedArray = context.obtainStyledAttributes(
-            attrs, R.styleable.IndicatorLayout, defStyleAttr, 0)
+            attrs, R.styleable.IndicatorLayout, defStyleAttr, 0
+        )
 
         try {
             indicatorCount = typedArray.getInt(R.styleable.IndicatorLayout_indicatorCount, 0)

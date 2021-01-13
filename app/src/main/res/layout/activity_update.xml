@@ -10,14 +10,15 @@
         android:id="@+id/status_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
         android:fontFamily="@font/muli"
-        android:textSize="24sp"
-        android:textColor="@android:color/black"
         android:text="@string/status_change"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/sendUpdate"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sendUpdate" />
+        app:layout_constraintTop_toBottomOf="@+id/switch3" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -72,7 +73,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/left_arrow"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonGenMenu"
@@ -91,9 +92,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/muli"
-        android:textSize="24sp"
-        android:textColor="@android:color/black"
         android:text="@string/act_window_update"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonReturn" />
 
@@ -103,10 +104,10 @@
         android:layout_height="60dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/room_dark"
+        android:onClick="onClick"
         app:layout_constraintEnd_toStartOf="@+id/buttonRoom2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_room_number"
-        android:onClick="onClick"/>
+        app:layout_constraintTop_toBottomOf="@+id/txt_room_number" />
 
     <Button
         android:id="@+id/buttonRoom2"
@@ -115,10 +116,10 @@
         android:layout_marginStart="35dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/room_dark"
+        android:onClick="onClick"
         app:layout_constraintEnd_toStartOf="@+id/buttonRoom3"
         app:layout_constraintStart_toEndOf="@+id/buttonRoom1"
-        app:layout_constraintTop_toBottomOf="@+id/txt_room_number"
-        android:onClick="onClick"/>
+        app:layout_constraintTop_toBottomOf="@+id/txt_room_number" />
 
     <Button
         android:id="@+id/buttonRoom3"
@@ -127,24 +128,25 @@
         android:layout_marginStart="35dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/room_dark"
+        android:onClick="onClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonRoom2"
-        app:layout_constraintTop_toBottomOf="@+id/txt_room_number"
-        android:onClick="onClick"/>
+        app:layout_constraintTop_toBottomOf="@+id/txt_room_number" />
 
     <Switch
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
         app:layout_constraintEnd_toStartOf="@+id/status1"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/textView3"
-        android:onClick="onCheckboxClicked"/>
+        app:layout_constraintTop_toTopOf="@+id/textView3" />
 
     <Switch
         android:id="@+id/switch2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
         app:layout_constraintEnd_toStartOf="@+id/status2"
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toTopOf="@+id/textView8" />
@@ -153,6 +155,7 @@
         android:id="@+id/switch3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
         android:textColorLink="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/status3"
         app:layout_constraintStart_toEndOf="@+id/textView11"
@@ -263,11 +266,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:fontFamily="@font/muli"
-        android:textSize="16dp"
-        android:textColor="@android:color/white"
         android:background="@drawable/spec_btn"
+        android:fontFamily="@font/muli"
         android:text="@string/act_window_update"
+        android:textColor="@android:color/white"
+        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switch3" />
