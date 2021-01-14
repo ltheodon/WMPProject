@@ -72,4 +72,8 @@ public class Room {
         this.room_ids = room_ids;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }

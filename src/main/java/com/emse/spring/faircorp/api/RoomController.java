@@ -94,6 +94,13 @@ public class RoomController {
         return new RoomDto(room);
     }
 
+    @PutMapping(path = "/{id}/updateName/{name}")
+    public RoomDto updateNameByID(@PathVariable Long id, @PathVariable String name) {
+        Room room = roomDao.findById(id).orElseThrow(IllegalArgumentException::new);
+        room.setName(name);
+        return new RoomDto(room);
+    }
+
     @DeleteMapping(path = "/{id}")
     public void delete(@PathVariable Long id) {
         heaterDao.deleteHeaters(id);

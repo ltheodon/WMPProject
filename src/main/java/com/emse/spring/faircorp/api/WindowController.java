@@ -71,6 +71,13 @@ public class WindowController {
         return new WindowDto(window);
     }
 
+    @PutMapping(path = "/{id}/updateName/{name}")
+    public WindowDto updateNameByID(@PathVariable Long id, @PathVariable String name) {
+        Window window = windowDao.findById(id).orElseThrow(IllegalArgumentException::new);
+        window.setName(name);
+        return new WindowDto(window);
+    }
+
     @DeleteMapping(path = "/{id}")
     public void delete(@PathVariable Long id) {
         windowDao.deleteById(id);
